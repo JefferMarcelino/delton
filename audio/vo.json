@@ -1,0 +1,131 @@
+{
+ "engine": "piper",
+ "lines": [
+  {
+   "id": "v01",
+   "t": 2.0,
+   "text": "It's Friday. Payday.",
+   "dur": 1.231
+  },
+  {
+   "id": "v02",
+   "t": 13.0,
+   "text": "Meet Jorge. Every month he earns one hundred dollars, and every month he has the same dream: a brand-new phone. So he tries to save.",
+   "dur": 7.442
+  },
+  {
+   "id": "v03",
+   "t": 28.0,
+   "text": "Then his friends call. Jorge knows how Friday nights go. But he says yes.",
+   "dur": 4.145
+  },
+  {
+   "id": "v04",
+   "t": 40.0,
+   "text": "After the weekend, his balance reads forty-three dollars. And he asks himself: How? What did I spend it on?",
+   "dur": 5.886
+  },
+  {
+   "id": "v05",
+   "t": 52.0,
+   "text": "Now next month's plans are at risk, and even the essentials might be hard to cover.",
+   "dur": 4.11
+  },
+  {
+   "id": "v06",
+   "t": 63.0,
+   "text": "Jorge's story is not unique. Around sixty-four percent of adult Mozambicans are financially illiterate.",
+   "dur": 5.84
+  },
+  {
+   "id": "v07",
+   "t": 75.0,
+   "text": "Across sub-Saharan Africa, the IMF puts it at sixty-five to seventy-three percent. That is more than five hundred million adults making money decisions without seeing the consequences, until it is too late.",
+   "dur": 11.598
+  },
+  {
+   "id": "v08",
+   "t": 92.0,
+   "text": "And the cost goes beyond the money lost today. Goals get delayed or abandoned. Families become vulnerable to debt. Opportunities to build lasting wealth slip away. Over time, this reinforces cycles of poverty across generations.",
+   "dur": 12.318
+  },
+  {
+   "id": "v09",
+   "t": 110.0,
+   "text": "The problem is not how much people earn. It is whether their decisions help them keep, protect, and grow what they earn. And every day it stays unresolved, Vodafone misses a chance to grow its financial ecosystem.",
+   "dur": 10.751
+  },
+  {
+   "id": "v10",
+   "t": 124.0,
+   "text": "So we bring you CashWise. A financial companion embedded in the Vodacom services people already use, designed to help them make better, informed decisions.",
+   "dur": 8.707
+  },
+  {
+   "id": "v11",
+   "t": 138.0,
+   "text": "It learns from the customer's authorized transaction patterns. It helps them understand their situation. It suggests alternatives that fit their goals. And it rewards the choices that lead to better outcomes, with loyalty points.",
+   "dur": 11.227
+  },
+  {
+   "id": "v12",
+   "t": 156.0,
+   "text": "The customer stays in control. CashWise suggests before the transaction is confirmed. The customer decides, and can always keep the original choice.",
+   "dur": 7.999
+  },
+  {
+   "id": "v13",
+   "t": 166.0,
+   "text": "Next Friday, Jorge is back at the same bottle store. Same friends. Same night. But just before he pays, CashWise shows him what this spend means for next week, and for his phone. For the first time, he sees the consequences before deciding. He picks a balanced option, enjoys the night, and still protects his goal.",
+   "dur": 16.498
+  },
+  {
+   "id": "v14",
+   "t": 186.0,
+   "text": "Consent comes first: nothing is processed until the customer opts in. And it works with or without internet, on the app or over USSD. The same intelligence extends across telecom and financial services: a customer topping up energy every few days can be offered a monthly plan that fits their real usage.",
+   "dur": 17.264
+  },
+  {
+   "id": "v15",
+   "t": 204.0,
+   "text": "Behind the scenes, it is simple. A customer starts a normal service, on the app or on USSD. Before confirming, that service asks CashWise for a recommendation. CashWise checks consent. If the customer opted in, it sends the request and their goals to the AI gateway. The model pulls the relevant products from the fintech service catalog and the customer's context from the data lake, and returns one clear suggestion. No opt-in, no recommendation. The service runs as it always did.",
+   "dur": 27.214
+  },
+  {
+   "id": "v16",
+   "t": 244.0,
+   "text": "Now, let's talk money. Sixty-nine point seven thousand dollars. That is all it takes to launch and run CashWise for its first year in Mozambique: forty-three and a half thousand in capex, twenty-six thousand in opex.",
+   "dur": 12.434
+  },
+  {
+   "id": "v17",
+   "t": 260.0,
+   "text": "Operating costs fall to seven thousand a year by year five, while active users grow from two point four to three point eight million across USSD and app. Marketing uses targeted SMS and the channels and ambassadors we already have.",
+   "dur": 13.073
+  },
+  {
+   "id": "v18",
+   "t": 276.0,
+   "text": "Then we scale. Kenya and Tanzania first, then DR Congo, Ethiopia, Lesotho, Egypt and Ghana. Nine markets, thirty-eight point six million active users by year five, for a total five-year cost of six hundred and ten thousand dollars. Prove it in Mozambique. Scale it across Africa.",
+   "dur": 16.684
+  },
+  {
+   "id": "v19",
+   "t": 304.0,
+   "text": "CashWise fits Vision 2030 on every pillar. It personalizes the customer experience and strengthens loyalty. It builds a scalable ecosystem: a reusable recommendation platform for the business. It embeds purpose into the brand, with a tangible commitment to financial well-being. And it empowers customers and communities, on smartphones and on USSD alike.",
+   "dur": 20.457
+  },
+  {
+   "id": "v20",
+   "t": 334.0,
+   "text": "The roadmap: a six-month pilot on merchant payments and PayBill. Then national launch across all our services. Then Africa, starting with Kenya and Tanzania. Then scale across Vodacom and Vodafone markets. And from year two, monetize, by offering the recommendation engine to B2B partners.",
+   "dur": 17.763
+  },
+  {
+   "id": "v21",
+   "t": 363.0,
+   "text": "M-Pesa transformed how people move money. CashWise will help them keep it, protect it, and grow it. One main goal: better financial decisions, in every money moment. We are Finsight. This is CashWise.",
+   "dur": 11.343
+  }
+ ]
+}

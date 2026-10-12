@@ -1,5 +1,5 @@
-// Renderer. Usage:
-//   node render.mjs                       full render → out/showreel.mp4 (video+audio)
+// Renderer. Usage (add --project showreel|pitch, default pitch; paths below are inside that folder):
+//   node render.mjs                       full render → out/final.mp4 (video+audio)
 //   node render.mjs --sheet [chapter]     contact sheets (one frame per beat) → out/sheet-*.png
 //   node render.mjs --frame 12.5 out.png  single frame
 //   node render.mjs --range 16 76 out.mp4 partial render (no audio)
@@ -11,10 +11,11 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
 import os from 'node:os';
 
-const ROOT = path.dirname(fileURLToPath(import.meta.url));
-const URL = pathToFileURL(path.join(ROOT, 'index.html')).href;
 const args = process.argv.slice(2);
 const opt = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : d; };
+const PROJECT = opt('--project', 'pitch');                       // pitch | showreel
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), PROJECT);
+const URL = pathToFileURL(path.join(ROOT, 'index.html')).href;
 const FPS = +opt('--fps', 30), WORKERS = +opt('--workers', Math.min(4, os.cpus().length)), CRF = +opt('--crf', 16);
 const W = 1920, H = 1080;
 mkdirSync(path.join(ROOT, 'out'), { recursive: true });
@@ -78,8 +79,8 @@ if (args.includes('--frame')) {
   await Promise.all(segs.map(async ([a, b], i) => { const page = await openPage(); await renderRange(page, a, b, files[i], 'w' + i); await page.close(); }));
   const list = path.join(ROOT, 'out', 'segs.txt'); writeFileSync(list, files.map(f => `file '${f}'`).join('\n'));
   await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', path.join(ROOT, 'out', 'video.mp4')]);
-  const audio = path.join(ROOT, 'audio', 'score.wav');
-  const final = path.join(ROOT, 'out', 'showreel.mp4');
+  const audio = existsSync(path.join(ROOT, 'mix.wav')) ? path.join(ROOT, 'mix.wav') : path.join(ROOT, 'score.wav');
+  const final = path.join(ROOT, 'out', 'final.mp4');
   if (existsSync(audio)) await run('ffmpeg', ['-y', '-loglevel', 'error', '-i', path.join(ROOT, 'out', 'video.mp4'), '-i', audio, '-c:v', 'copy', '-c:a', 'aac', '-b:a', '256k', '-shortest', final]);
   console.log('wrote', final);
 }

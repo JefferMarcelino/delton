@@ -1,7 +1,7 @@
 // Shared helpers. Everything here is pure: output depends only on inputs.
 'use strict';
 const W = 1920, H = 1080;
-const INK = '#0C0C0F', PAPER = '#F2EFE9', ACCENT = '#FF4D1C', MUTE = '#6E6B66';
+const INK = '#0C0C0F', PAPER = '#F2EFE9', ACCENT = window.ACCENT || '#FF4D1C', MUTE = '#6E6B66';
 const DISPLAY = 'Unbounded', UI = 'Inter';
 
 // ---------- math ----------
