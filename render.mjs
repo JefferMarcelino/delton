@@ -68,6 +68,12 @@ if (args.includes('--frame')) {
     const out = path.join(ROOT, 'out', `sheet-${name}.png`);
     writeFileSync(out, Buffer.from(url.split(',')[1], 'base64')); console.log('wrote', out, times.length, 'frames');
   }
+} else if (args.includes('--grid')) {
+  // --grid 9,30,38 [out.png]: selected frames at half size, 2 columns
+  const times = args[args.indexOf('--grid') + 1].split(',').map(Number); const out = args[args.indexOf('--grid') + 2] || path.join(ROOT, 'out', 'grid.png');
+  const page = await openPage();
+  const url = await page.evaluate(({ times }) => window.sheet(times, 2, 960, 540), { times });
+  writeFileSync(out, Buffer.from(url.split(',')[1], 'base64')); console.log('wrote', out);
 } else if (args.includes('--range')) {
   const i = args.indexOf('--range'); const t0 = +args[i + 1], t1 = +args[i + 2], out = args[i + 3] || path.join(ROOT, 'out', `range-${t0}-${t1}.mp4`);
   const page = await openPage(); await renderRange(page, t0, t1, out, 'range'); console.log('wrote', out);
