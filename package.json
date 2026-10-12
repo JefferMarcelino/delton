@@ -1,10 +1,16 @@
 {
   "name": "delton",
   "version": "1.0.0",
-  "description": "",
+  "description": "Delton motion design studio: CashWise pitch and showreel render pipeline",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "vo": "python3 audio/voiceover.py --engine elevenlabs",
+    "vo:standin": "python3 audio/voiceover.py --engine piper",
+    "score": "python3 audio/pitch_score.py",
+    "sheets": "node render.mjs --project pitch --sheet",
+    "render": "node render.mjs --project pitch",
+    "showreel:score": "python3 audio/score.py",
+    "showreel:render": "node render.mjs --project showreel"
   },
   "repository": {
     "type": "git",

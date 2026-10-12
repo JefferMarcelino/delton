@@ -280,10 +280,15 @@ def master(vo=None, vo_gain=1.0, duck_db=-9.0, target_lufs=-14.0):
         bed = bed * g[:, None] + vo * vo_gain
     mix = np.tanh(bed * 0.9) / np.tanh(0.9)
     meter = pyln.Meter(SR)
-    for _ in range(4):
+    for _ in range(2):   # soft-clip passes to tame peaks
         L = meter.integrated_loudness(mix)
         mix = mix * 10 ** ((target_lufs - L) / 20)
         mix = np.tanh(mix * 1.1) / np.tanh(1.1)
+    for _ in range(2):   # final linear trims: no gain stage after the measurement
+        L = meter.integrated_loudness(mix)
+        mix = mix * 10 ** ((target_lufs - L) / 20)
+    peak = float(np.max(np.abs(mix)))
+    if peak > 0.98: mix = mix * (0.98 / peak)
     L = meter.integrated_loudness(mix); peak = float(np.max(np.abs(mix)))
     fo = int(1.0 * SR); mix[-fo:] *= np.linspace(1, 0, fo)[:, None]
     return mix.astype(np.float32), L, peak
